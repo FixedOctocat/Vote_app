@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<ul>
+				{% for choice in poll.choice_set.all %}
+					<li for="choice{{ forloop.counter }}">{{ choice.choice_text }} - {{ choice.num_votes }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
